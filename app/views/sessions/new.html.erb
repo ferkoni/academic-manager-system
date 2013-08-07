@@ -1,0 +1,38 @@
+<div id="login" class="row">
+  <div class="span4 offset4 rounded">
+    <%= form_tag sessions_path, class:"form-horizontal" do %>
+      <fieldset>
+        <legend>Log in</legend>
+        <div class="field">
+          <div class="control-group">
+            <%= label_tag :email, nil, class:'control-label' %>
+            <div class="controls">
+              <%= text_field_tag :email, params[:email], placeholder:"Email" %>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control-group">
+            <%= label_tag :password, nil, class:'control-label' %>
+            <div class="controls">
+              <%= password_field_tag :password %>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control-group">
+            <div class="controls">
+              <label class="checkbox-inline">
+                <%= check_box_tag :remember_me,1, params[:remember_me] %>
+                Remember me
+              </label>
+            </div>
+          </div>
+        </div>
+        <%= button_tag(type: 'submit', class:"btn btn-primary btn-large btn-block") do %>
+          <%= content_tag(:strong, 'Login') %>
+        <% end %>
+      </fieldset>
+    <% end %>
+  </div>
+</div>
